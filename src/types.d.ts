@@ -14,6 +14,6 @@ export interface StateMutation {
 
 export interface Film {
   title: string;
-  name: string;
+  id: string;
   // id: string;
 }

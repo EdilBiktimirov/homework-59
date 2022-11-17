@@ -22,15 +22,24 @@ class FilmApp extends Component {
     });
   }
 
-  onInputEdit = (n: string, v: string) => {
+  onInputEdit = (id: string, v: string) => {
     const copyFilms = [...this.state.films];
-    const index = copyFilms.findIndex(film => film.name === n);
+    const index = copyFilms.findIndex(film => film.id === id);
     const copyFilm = {...this.state.films[index]};
     copyFilm.title = v;
     copyFilms[index] = copyFilm;
 
     this.setState({films: copyFilms})
   };
+
+  deleteFilm = (id: string) => {
+    const copyFilms = [...this.state.films];
+    const index = copyFilms.findIndex(film => film.id === id);
+    console.log(index);
+    copyFilms.splice(index, 1);
+    this.setState({films: copyFilms});
+
+  }
 
 
   render() {
@@ -40,7 +49,11 @@ class FilmApp extends Component {
         <FilmForm onSubmit={this.addFilm}/>
 
         {this.state.films.map(element => {
-          return <FilmCard key={Math.random()} element={element} onInputChange={this.onInputEdit}/>
+          return <FilmCard
+            key={Math.random()}
+            element={element}
+            onInputChange={this.onInputEdit}
+            onBtnClick={() =>this.deleteFilm(element.id)}/>
         })
         }
       </>

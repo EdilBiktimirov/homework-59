@@ -21,17 +21,15 @@ class FilmForm extends Component<Props> {
 
   state: Film = {
     title: '',
-    name: '',
+    id: '',
     // id: ''
   }
 
   onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = e.target;
+    const {value} = e.target;
     this.setState((prev) => ({
       ...prev,
       title: value,
-      name: name,
-
     }))
   }
 
@@ -39,15 +37,15 @@ class FilmForm extends Component<Props> {
     e.preventDefault();
 
     this.props.onSubmit({
-      // id: Math.random().toString(),
       ...this.state,
+      id: Math.random().toString(),
     });
   }
 
   render() {
     return (
       <form onSubmit={this.onFormSubmit}>
-        <input value={this.state.title} name={Math.random().toString()} onChange={this.onInputChange}/>
+        <input value={this.state.title} name="title" onChange={this.onInputChange} type="text"/>
         <Button name={"Add"}/>
       </form>
     );
