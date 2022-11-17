@@ -3,7 +3,7 @@ import "./Button.css";
 
 interface Props {
   name: string;
-  onBtnClick: React.MouseEventHandler;
+  onBtnClick?: React.MouseEventHandler;
 }
 
 const Button: React.FC<Props> = ({name, onBtnClick}) => {
