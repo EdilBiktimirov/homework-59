@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import JokeApp from "./components/JokeApp/JokeApp";
+//import JokeApp from "./components/JokeApp/JokeApp";
 import FilmApp from "./components/FilmApp/FilmApp";
 
 
@@ -11,7 +11,7 @@ function App() {
 
       <FilmApp/>
 
-      <JokeApp/>
+
 
     </div>
   );
