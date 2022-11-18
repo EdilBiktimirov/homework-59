@@ -2,11 +2,10 @@
     width: 150px;
     height: 50px;
     padding: 10px;
-    border: 2px solid #eee;
+    border: 2px solid darkgrey;
     background: none;
     margin-top: auto;
     font-weight: bold;
-
 }
 
 .Button:hover,

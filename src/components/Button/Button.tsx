@@ -14,4 +14,8 @@ const Button: React.FC<Props> = ({name, onBtnClick}) => {
   );
 };
 
-export default Button;
+const checkProps = (prev: Props, next: Props) => {
+  return prev.onBtnClick !== next.onBtnClick;
+}
+
+export default React.memo(Button, checkProps);

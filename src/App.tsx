@@ -1,18 +1,13 @@
 import React from 'react';
 import './App.css';
-//import JokeApp from "./components/JokeApp/JokeApp";
-import FilmApp from "./components/FilmApp/FilmApp";
-
+import FilmApp from "./containers/FilmApp/FilmApp";
+import JokeApp from "./containers/JokeApp/JokeApp";
 
 function App() {
-
   return (
     <div className="App">
-
       <FilmApp/>
-
-
-
+      <JokeApp/>
     </div>
   );
 }

@@ -1,19 +1,14 @@
 export interface Joke {
-  value: string;
+  categories: [];
+  created_at: string;
+  icon_url: string;
   id: string;
-}
-
-// export interface State {
-//   films: []
-//   // id: string;
-// }
-
-export interface StateMutation {
+  updated_at: string
+  url: string;
   value: string;
 }
 
 export interface Film {
   title: string;
   id: string;
-  // id: string;
 }

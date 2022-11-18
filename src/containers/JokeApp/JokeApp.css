@@ -5,6 +5,9 @@
     min-height: 400px;
     border: 2px solid #eee;
     padding: 10px;
+    box-shadow: 1px 1px 7px darkgrey, -1px -1px 5px darkgrey;
+    border-radius: 25px;
+    overflow: hidden;
 }
 
 .JokeAppBox {

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import FilmForm from "../FilmForm/FilmForm";
+import FilmForm from "../../components/FilmForm/FilmForm";
 import {Film} from "../../types";
-import FilmCard from "../FilmForm/FilmCard";
+import FilmCard from "../../components/FilmCard/FilmCard";
+import "./FilmApp.css";
 
 interface State {
   films: Film [];
@@ -19,7 +20,7 @@ class FilmApp extends Component {
         newFilm
       ]
     });
-  }
+  };
 
   onInputEdit = (id: string, e: React.ChangeEvent<HTMLInputElement>) => {
     const copyFilms = [...this.state.films];
@@ -36,15 +37,14 @@ class FilmApp extends Component {
     const index = copyFilms.findIndex(film => film.id === id);
     copyFilms.splice(index, 1);
     this.setState({films: copyFilms});
-  }
-
+  };
 
   render() {
-
     return (
-      <div>
+      <div className="FilmApp">
         <FilmForm onSubmit={this.addFilm}/>
-        <div>
+        <h3 className="Title">Films:</h3>
+        <div className="FilmsBox">
           {this.state.films.map(element => (
             <FilmCard
               key={element.id}

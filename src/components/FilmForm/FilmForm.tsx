@@ -1,28 +1,16 @@
 import React, {Component} from 'react';
 import Button from "../Button/Button";
-import type {Film, StateMutation} from "../../types";
+import type {Film} from "../../types";
+import "./FilmForm.css";
 
 interface Props {
-  // name?: string,
   onSubmit: (state: Film) => void;
 }
 
-// interface StateMutation {
-//   // name?: string;
-//   value: string;
-// }
-
-
 class FilmForm extends Component<Props> {
-
-  constructor(props: Props) {
-    super(props);
-  }
-
   state: Film = {
     title: '',
     id: '',
-    // id: ''
   }
 
   onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +19,7 @@ class FilmForm extends Component<Props> {
       ...prev,
       title: value,
     }))
-  }
+  };
 
   onFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,12 +28,12 @@ class FilmForm extends Component<Props> {
       ...this.state,
       id: Math.random().toString(),
     });
-  }
+  };
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
-        <input value={this.state.title} name="title" onChange={this.onInputChange} type="text"/>
+      <form className="FilmForm" onSubmit={this.onFormSubmit}>
+        <input className="FormInput" value={this.state.title} name="title" onChange={this.onInputChange} type="text"/>
         <Button name={"Add"}/>
       </form>
     );
