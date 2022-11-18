@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Button from "../Button/Button";
+import ButtonC from "../Button/ButtonC";
 import type {Film} from "../../types";
 import "./FilmForm.css";
 
@@ -34,7 +34,7 @@ class FilmForm extends Component<Props> {
     return (
       <form className="FilmForm" onSubmit={this.onFormSubmit}>
         <input className="FormInput" value={this.state.title} name="title" onChange={this.onInputChange} type="text"/>
-        <Button name={"Add"}/>
+        <ButtonC name={"Add"}/>
       </form>
     );
   }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Film} from "../../types";
 import "./FilmCard.css";
-import Button from "../Button/Button";
+import ButtonC from "../Button/ButtonC";
 
 interface Props {
   element: Film,
@@ -32,7 +32,7 @@ class FilmCard extends Component <Props, State> {
           onChange={this.props.onInputChange}
           name="title"
         />
-        <Button name={"Delete"} onBtnClick={this.props.onBtnClick}/>
+        <ButtonC name={"Delete"} onBtnClick={this.props.onBtnClick}/>
       </div>
     );
   }
